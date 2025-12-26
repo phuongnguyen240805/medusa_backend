@@ -5,11 +5,11 @@ class CustomerInfoModuleService extends MedusaService({
   customer_info: CustomerInfo,
 }) {
   async getListCustomers() {
-    return await this.listCustomer_infos();
+    return await this.listCustomer_infoes();
   }
 
   async getCustomerInfoByCustomerId(customerId: string) {
-    const result = await this.listCustomer_infos(
+    const result = await this.listCustomer_infoes(
       { customer_id: customerId },
       { take: 1 }
     );
@@ -18,15 +18,15 @@ class CustomerInfoModuleService extends MedusaService({
   }
 
   async createCustomerInfo({ data }) {
-    return await this.createCustomer_infos(data);
+    return await this.createCustomer_infoes(data);
   }
 
   async updateCustomerInfo(id: string, data) {
-    return await this.updateCustomer_infos({ id }, data);
+    return await this.updateCustomer_infoes({ id }, data);
   }
 
   async deleteCustomerInfo(id: string) {
-    return await this.deleteCustomer_infos(id);
+    return await this.deleteCustomer_infoes(id);
   }
 }
 
