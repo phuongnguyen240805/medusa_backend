@@ -7,6 +7,17 @@ import {
 import RbacModuleService from "../../modules/rbac/secvice";
 import { Permission } from "../../modules/rbac/models/role";
 
+const hasPermission = (
+  permissions: Permission[],
+  subject: string,
+  action: string[]
+): boolean => {
+  return permissions.some((permission) =>
+    permission.subject === subject 
+  // && action.includes(permission.actions)
+  );
+};
+
 export const checkPermissions = (subject: string, action: string[]) => {
   return (
     req: AuthenticatedMedusaRequest,

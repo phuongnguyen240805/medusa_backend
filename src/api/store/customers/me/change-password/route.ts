@@ -6,10 +6,10 @@ import { Modules } from "@medusajs/framework/utils";
 export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
   const { current_password, new_password, email } = req.body as any;
 
-  const authUserId = req.auth_context?.actor_id;
-  if (!authUserId) {
-    return res.status(401).json({ message: "Unauthorized" });
-  }
+  // const authUserId = req.auth_context?.actor_id;
+  // if (!authUserId) {
+  //   return res.status(401).json({ message: "Unauthorized" });
+  // }
 
   const authModuleService: IAuthModuleService = req.scope.resolve(Modules.AUTH);
 

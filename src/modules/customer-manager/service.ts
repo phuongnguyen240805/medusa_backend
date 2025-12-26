@@ -22,7 +22,7 @@ class CustomerManagerModuleService extends MedusaService({
     device_id: string;
     device_list?: Record<string, unknown> | null;
   }) {
-    return await this.createCustomCustomers(data);
+    // return await this.createCustomCustomers(data);
   }
 
   /**
