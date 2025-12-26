@@ -23,7 +23,7 @@ class RbacModuleService extends MedusaService({
     }
 
     // 2. Trả về permissions từ Role
-    return user.role.permissions;
+    return user.role.permissions as Permission[] | null;
   }
 }
 
